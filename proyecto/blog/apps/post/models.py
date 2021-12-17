@@ -26,9 +26,8 @@ class Post(models.Model):
     titulo=models.CharField('Titulo del Post', max_length=150, null=False, blank=False)
     descripcion=models.CharField('Descripción', max_length=110, null=False, blank=False)
     categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE,null=False,blank=False)
-    fecha_alta=models.DateField('Fecha de creacion',auto_now_add=True, auto_now=False)
     estado=models.BooleanField('Publicado/No Publicado', default=True)
-    imagen=models.URLField(max_length=600, blank=False, null=False)
+    imagen=models.ImageField('Imagenes', blank=False,null=False, upload_to='post')
     contenido=models.TextField()
     fecha_creacion=models.DateField('Fecha de Creación', auto_now=False, auto_now_add=True)
 

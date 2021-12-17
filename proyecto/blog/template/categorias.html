@@ -1,0 +1,827 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>{% block titulo %}  Blog {% endblock titulo %}</title>
+<meta property="og:url" content="http://www.valeron.net/index.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Free responsive web template Istria" />
+<meta property="og:description" content="Free responsive web template Istria by Valeron design studio" />
+<meta property="og:image" content="http://www.valeron.net/img/valeron-artist.jpg" />
+<meta name="description" content="Free responsive web template Istria by Valeron design studio" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="robots" content="index,follow,all" />
+<meta name="keywords" content="Izrada web stranica, web studio Istra, blog" />
+<meta name="author" content="Valeron design studio" />
+<link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/apple-touch-icon-57x57.png' %}">
+<link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/apple-touch-icon-60x60.png' %}">
+<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+<link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-touch-icon-76x76.png' %}">
+<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %">
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/apple-touch-icon-120x120.png' %}">
+<link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144.png' %}">
+<link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/apple-touch-icon-152x152.png' %}">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon-180x180.png' %}">
+<link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" sizes="32x32">
+<link rel="icon" type="image/png" href="{% static 'img/android-chrome-192x192.png' %}" sizes="192x192">
+<link rel="icon" type="image/png" href="{% static 'img/favicon-96x96.png' %}" sizes="96x96">
+<link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16">
+<link rel="manifest" href="{% static 'img/manifest.json' %}">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="{% static 'css/animsition.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/grid.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/overlay.css' %}" />
+<link rel="stylesheet" href="{% static 'css/social.css' %}">
+<link rel="stylesheet" href="{% static 'css/imgover.css' %}">
+<link href="{% static 'css/lightgallery.css' %}" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.8/font-awesome-animation.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body>
+
+  
+      <div class="animsition-overlay">
+        <section id="section-1">
+          <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s"></div>
+          {% block nav_2 %}
+          <header class="main_h">
+            <div class="menufix"> <a class="logo" href="index.html"><img src="{% static 'images/sii.png' %}" alt=""></a>
+              <div class="mobile-toggle"> <span></span> <span></span> <span></span> </div>
+              
+              <nav>
+                
+                <ul> 
+                    <li class="line"><a class="out animsition-link" href="{% url 'post:post' %}"> Buscar por Categoria</a></li>
+
+                </ul>
+                <ul> 
+                  <li class="line"> <a class="out animsition-link" href="{% url 'post:filtrarFecha' %}"> Buscar Por Fecha </a></li>
+                </ul>
+                <ul>
+                  <li class="line"><a class="out animsition-link" href="{% url 'post:index' %}">Principal</a></li>
+                {% block nav %}  <li class="line"><a class="out animsition-link" href="{% url 'post:post' %}">Publicaciones </a></li> {% endblock nav %}
+                
+                </ul>
+               
+              </nav>
+            </div>
+      
+      <!-- / row --> 
+    </header>
+  {% endblock nav_2 %}
+    <div class="grid flex">
+      <div class="row">
+        <div class="colw_6">
+          <h1 id="title-sub1">Desafíos globales</h1>
+          <h2 id="title-sub2">BLOG</h2>
+        </div> 
+       
+        <!-- END colw_6 -->
+        
+        <div class="colw_6 wow zoomIn">
+          <div class="box-fix">
+            <h3 class="centered">Redes Sociales</h3>
+            <div class="social"> <a href="https://www.facebook.com/Valeron-design-studio-245216518822368/" class="soc-btn facebook"> <i class="fa fa-facebook"></i> Facebook </a> <a href="https://twitter.com/ds_valeron" class="soc-btn twitter"> <i class="fa fa-twitter"></i> Twitter </a> <a href="https://plus.google.com/116499013539302933204" class="soc-btn google5"> <i class="fa fa-google"></i> Google + </a> </div>
+          </div>
+        </div>
+      
+        <!-- END col_6 --> 
+        
+      </div>
+      <!-- END row --> 
+    </div>
+    <!-- End GRID FLEX --> 
+    
+  </section>
+
+  <!-- END #section-1 -->
+  {% block cuerpo %}
+
+    {% include 'pobreza.html' %}
+    {% include 'hambre/hambre.html' %}
+    {% include 'salud/salud.html' %}
+    {% include 'educacion/educacion.html' %}
+      
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/igualdad_genero.jpg 375, categorias/igualdad_genero.jpg 480, categorias/igualdad_genero.jpg 800' %}" data-src="{% static 'categorias/igualdad_genero.jpg' %}" data-sub-html="<h4>Igualdad de Genero</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/igualdad_genero.jpg' %}" alt="Igualdad de Genero" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Igualdad de Genero</h3>
+          <p class="textlimit">Descripcion de Igualdad de genero</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div         class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+      
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/agua_limpia.png 375, categorias/agua_limpia.png 480, categorias/agua_limpia.png 800' %}" data-src="{% static 'categorias/agua_limpia.png' %}" data-sub-html="<h4>Agua Limpia y Saneamiento</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/agua_limpia.png' %}" alt="Agua Limpia" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Agua Limpia y Saneamiento</h3>
+          <p class="textlimit">Descripcion de Agua Limpia</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 --> 
+      
+    </div>
+    <!-- END row --> 
+  </div>
+  <div class="grid flex16">
+    <div class="row">
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-1">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/energia_asequible.png 375, categorias/energia_asequible.png 480, categorias/energia_asequible.png 800' %}" data-src="{% static 'categorias/energia_asequible.png' %}" data-sub-html="<h4>Energia Asequible y No Contaminante</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/energia_asequible.png' %}" alt="Energia Asequible" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+            
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Energia Asequible y No Contaminante</h3>
+          <p class="textlimit">Descripcion de Energia</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+      
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/trabajo_decente.jpg 375, categorias/trabajo_decente.jpg 480, categorias/trabajo_decente.jpg 800' %}" data-src="{% static 'categorias/trabajo_decente.jpg' %}" data-sub-html="<h4>Trabajo Decente</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/trabajo_decente.jpg' %}" alt="Trabajo Decente" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="http://www.valeron.net" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Crecimiento Económico y Trabajo Decente</h3>
+          <p class="textlimit"></p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+      
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/industria.png 375, categorias(industria.png) 480, categorias/industria.png 800' %}" data-src="{% static 'categorias/industria.png' %}" data-sub-html="<h4>Industria</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/industria.png' %}" alt="Industria" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Industria</h3>
+          <p class="textlimit">Descripción de Industria</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 --> 
+      
+    </div>
+    <!-- END row --> 
+  </div>
+  <div class="grid flex16">
+    <div class="row">
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-1">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/reduccion_desigualdades.jpg 375, categorias/reduccion_desigualdades.jpg 480, categorias/reduccion_desigualdades.jpg 800' %}" data-src="{% static 'categorias/reduccion_desigualdades.jpg' %}" data-sub-html="<h4>Reducción de Desigualdades</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/reduccion_desigualdades.jpg' %}" alt="Reduccion de Desigualdades" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+            
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Reducción de Desigualdades</h3>
+          <p class="textlimit">Descriocion desigualdades</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+      
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/ciudades_comunidades.png 375, categorias/ciudades_comunidades.png 480, categorias/ciudades_comunidades.png 800' %}" data-src="{% static 'categorias/ciudades_comunidades.png' %}" data-sub-html="<h4>Ciudades y Comunidades</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/ciudades_comunidades.png' %}" alt="Ciudades" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Ciudades y Comunidades Sostenibles</h3>
+          <p class="textlimit">Descripcion de Comunidades</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-2">
+            <div class="zoom-wrap" data-responsive="{% static 'categorias/produccion_consumo.png 375, categorias/produccion_consumo.png 480, categorias/produccion_consumo.png 800' %}" data-src="{% static 'categorias/produccion_consumo.png' %}" data-sub-html="<h4>Produccion Consumo</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/produccion_consumo.png' %}" alt="Produccion Consumo" class="full-width"> <span class="fadef"></span> </div>
+            <!-- END data-responsive --> 
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+          <div class="col_6">
+            <div class="soc-wrap">
+              <ul class="blogsocico">
+                <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+              </ul>
+            </div>
+            <!-- soc Wrap --> 
+          </div>
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">Producción Y Consumo responsables</h3>
+          <p class="textlimit">Descripcion de Produccion</p>
+          <div class="clear"></div>
+          <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+            <div class="istria-over"></div>
+            <div class="istria-line left">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line left -->
+            <div class="istria-line right">
+              <div class="inner"></div>
+            </div>
+            <!-- END istria-line right --> 
+          </div>
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      
+      <!-- END col_4 --> 
+      
+    </div>
+    <!-- END row --> 
+  
+<!-- END .animsition-overlaj -->
+
+<div class="grid flex16">
+  <div class="row">
+    <div class="col_4 beta">
+      <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+      <div class="boxwsha column3" style="height: 616px;">
+        <div class="zoomimg" id="gallery-1">
+          <div class="zoom-wrap" data-responsive="{% static 'categorias/accion_clima.jpg 375, categorias/accion_clima.jpg 480, categorias/accion_clima.jpg 800' %}" data-src="{% static 'categorias/accion_clima.jpg' %}" data-sub-html="<h4>Acción Clima</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/accion_clima.jpg' %}" alt="Accion Clima" class="full-width"> <span class="fadef"></span> </div>
+          <!-- END data-responsive --> 
+          
+        </div>
+        <!-- END .zoomimg #lightgallery  -->
+        <div class="clear"></div>
+        <div class="col_6">
+          <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+          <!-- END date --> 
+        </div>
+        <!-- END col_6 -->
+        
+        <div class="col_6">
+          <div class="soc-wrap">
+            <ul class="blogsocico">
+              <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+              <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+              <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+            </ul>
+          </div>
+          <!-- soc Wrap --> 
+        </div>
+        <!-- END col_6 -->
+        <div class="clear"></div>
+        <h3 class="title-post">Acción por el clima</h3>
+        <p class="textlimit">Descripción accion por el clima</p>
+        <div class="clear"></div>
+        <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+          <div class="istria-over"></div>
+          <div class="istria-line left">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line left -->
+          <div class="istria-line right">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line right --> 
+        </div>
+        <!-- END fix-btn --> 
+        
+      </div>
+      <!-- END boxwsha --> 
+    </div>
+    <!-- END col_4 -->
+    
+    <div class="col_4 beta">
+      <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+      <div class="boxwsha column3" style="height: 616px;">
+        <div class="zoomimg" id="gallery-2">
+          <div class="zoom-wrap" data-responsive="{% static 'categorias/vida_submarina.png 375, categorias/vida_submarina.png 480, categorias/vida_submarina.png 800' %}" data-src="{% static 'categorias/vida_submarina.png' %}" data-sub-html="<h4>Vida Submarina</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{%static 'categorias/vida_submarina.png' %}" alt="Vida Submarina" class="full-width"> <span class="fadef"></span> </div>
+          <!-- END data-responsive --> 
+        </div>
+        <!-- END .zoomimg #lightgallery  -->
+        
+        <div class="clear"></div>
+        <div class="col_6">
+          <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+          <!-- END date --> 
+        </div>
+        <!-- END col_6 -->
+        
+        <div class="col_6">
+          <div class="soc-wrap">
+            <ul class="blogsocico">
+              <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+              <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+              <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+            </ul>
+          </div>
+          <!-- soc Wrap --> 
+        </div>
+        <!-- END col_6 -->
+        <div class="clear"></div>
+        <h3 class="title-post">Vida Submarina</h3>
+        <p class="textlimit">Descripcion de vida submarina</p>
+        <div class="clear"></div>
+        <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+          <div class="istria-over"></div>
+          <div class="istria-line left">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line left -->
+          <div class="istria-line right">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line right --> 
+        </div>
+        <!-- END fix-btn --> 
+        
+      </div>
+      <!-- END boxwsha --> 
+    </div>
+    <!-- END col_4 -->
+    
+    <div class="col_4 beta">
+      <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+      <div class="boxwsha column3" style="height: 616px;">
+        <div class="zoomimg" id="gallery-2">
+          <div class="zoom-wrap" data-responsive="{% static 'categorias/vida_ecosistema.png 375, categorias/vida_ecosistema.png 480, categorias/vida_ecosistema.png 800' %}" data-src="{% static 'categorias/vida_ecosistema.png' %}" data-sub-html="<h4>Vida Ecosistema</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/vida_ecosistema.png' %}" alt="Ecosistema" class="full-width"> <span class="fadef"></span> </div>
+          <!-- END data-responsive --> 
+        </div>
+        <!-- END .zoomimg #lightgallery  -->
+        
+        <div class="clear"></div>
+        <div class="col_6">
+          <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+          <!-- END date --> 
+        </div>
+        <!-- END col_6 -->
+        
+        <div class="col_6">
+          <div class="soc-wrap">
+            <ul class="blogsocico">
+              <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+              <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+              <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+            </ul>
+          </div>
+          <!-- soc Wrap --> 
+        </div>
+        <!-- END col_6 -->
+        <div class="clear"></div>
+        <h3 class="title-post">Vida de Ecosistema Terrestre</h3>
+        <p class="textlimit">Descripcion de Vida Ecosistema Terrestre</p>
+        <div class="clear"></div>
+        <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+          <div class="istria-over"></div>
+          <div class="istria-line left">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line left -->
+          <div class="istria-line right">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line right --> 
+        </div>
+        <!-- END fix-btn --> 
+        
+      </div>
+      <!-- END boxwsha --> 
+    </div>
+  <!-- END row --> 
+</div>
+<div class="grid flex16">
+  <div class="row">
+    <div class="col_4 beta">
+      <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+      <div class="boxwsha column3" style="height: 613px;">
+        <div class="zoomimg" id="gallery-1">
+          <div class="zoom-wrap" data-responsive="{% static 'categorias/paz_justicia.jpg 375, categorias/paz_justicia.jpg 480, categorias/paz_justicia.jpg 800' %}" data-src="{% static 'categorias/paz_justicia.jpg' %}" data-sub-html="<h4>Paz Justicia</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/paz_justicia.jpg' %}" alt="Paz Justicia" class="full-width"> <span class="fadef"></span> </div>
+          <!-- END data-responsive --> 
+          
+        </div>
+        <!-- END .zoomimg #lightgallery  -->
+        <div class="clear"></div>
+        <div class="col_6">
+          <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+          <!-- END date --> 
+        </div>
+        <!-- END col_6 -->
+        
+        <div class="col_6">
+          <div class="soc-wrap">
+            <ul class="blogsocico">
+              <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+              <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+              <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+            </ul>
+          </div>
+          <!-- soc Wrap --> 
+        </div>
+        <!-- END col_6 -->
+        <div class="clear"></div>
+        <h3 class="title-post">Paz, Justicia E Instituciones Solidas</h3>
+        <p class="textlimit">Descripcion de Paz Justicia</p>
+        <div class="clear"></div>
+        <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+          <div class="istria-over"></div>
+          <div class="istria-line left">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line left -->
+          <div class="istria-line right">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line right --> 
+        </div>
+        <!-- END fix-btn --> 
+        
+      </div>
+      <!-- END boxwsha --> 
+    </div>
+    <!-- END col_4 -->
+    
+    <div class="col_4 beta">
+      <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+      <div class="boxwsha column3" style="height: 613px;">
+        <div class="zoomimg" id="gallery-2">
+          <div class="zoom-wrap" data-responsive="{% static 'categorias/alianza.png 375, categorias/alianza.png 480, categorias/alianza.png 800' %}" data-src="{% static 'categorias/alianza.png' %}" data-sub-html="<h4>Alianza</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/alianza.png' %}" alt="Alianza" class="full-width"> <span class="fadef"></span> </div>
+          <!-- END data-responsive --> 
+        </div>
+        <!-- END .zoomimg #lightgallery  -->
+        
+        <div class="clear"></div>
+        <div class="col_6">
+          <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+          <!-- END date --> 
+        </div>
+        <!-- END col_6 -->
+        
+        <div class="col_6">
+          <div class="soc-wrap">
+            <ul class="blogsocico">
+              <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+              <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+              <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+            </ul>
+          </div>
+          <!-- soc Wrap --> 
+        </div>
+        <!-- END col_6 -->
+        <div class="clear"></div>
+        <h3 class="title-post">Alianza para lograr los Objetivos</h3>
+        <p class="textlimit">Descripcion de Alianza</p>
+        <div class="clear"></div>
+        <div class="fix-btn-blog"> <a href="#" class="istria-btn trigger2">Agregar Comentario</a>
+          <div class="istria-over"></div>
+          <div class="istria-line left">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line left -->
+          <div class="istria-line right">
+            <div class="inner"></div>
+          </div>
+          <!-- END istria-line right --> 
+        </div>
+        <!-- END fix-btn --> 
+        
+      </div>
+      <!-- END boxwsha --> 
+    </div>
+    <!-- END col_4 -->
+    {% endblock cuerpo %}
+    
+ 
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.matchHeight-min.js' %}"></script> 
+<script src="{% static 'js/wow.min.js' %}"></script> 
+<script src="{% static 'js/animsition.min.js' %}"></script> 
+<script src="{% static 'js/lightgallery-all.min.js' %}"></script> 
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('#gallery-1, #gallery-2, #gallery-3').lightGallery();
+        });
+    $('#gallery-99').lightGallery({
+        thumbnail:true,
+        animateThumb: false,
+        showThumbByDefault: false,		
+		speed: 1200
+    });
+ 
+</script> 
+<script src="{% static 'js/jquery.the-modal.js' %}"></script> 
+
+<script src="{% static 'js/functions.js' %}"></script> 
+<script type="text/javascript">
+$( document ).ready(function() {
+$('.menu-item').hover(function () {
+    $('#active', this).toggleClass('active');
+    $('#active', this).css({'display':'block'});
+});
+});
+</script> 
+<script type="text/javascript">
+$(function(){
+  $(".textlimit").each(function(i){
+    len=$(this).text().length;
+    if(len>100)
+    {
+      $(this).text($(this).text().substr(0,100)+'...');
+    }
+  });
+});
+</script> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15815880-3']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

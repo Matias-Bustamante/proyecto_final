@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+    <div class="grid flex16">
+        <div class="row">
+          <div class="col_4 beta">
+            <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+            <div class="boxwsha column3" style="height: 585px;">
+              <div class="zoomimg" id="gallery-1">
+                <div class="zoom-wrap" data-responsive="{% static 'categorias/pobreza.png 375, categorias/pobreza.png 480, categorias/pobreza.png 800' %}" data-src="{% static 'categorias/pobreza.png' %}" data-sub-html="<h4>Fin de la Pobreza</h4>"> <a href="" class="fixico"><i class="fa fa-search fa-2x"></i></a> <img src="{% static 'categorias/pobreza.png' %}" alt="Hello Istria" class="full-width"> <span class="fadef"></span> </div>
+                <!-- END data-responsive --> 
+                
+              </div>
+              <!-- END .zoomimg #lightgallery  -->
+              <div class="clear"></div>
+              <div class="col_6">
+                <div class="date"> <i class="fa fa-calendar"></i> <span class="italic">20 de Diciembre 2021</span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">by ONU</a> </div>
+                <!-- END date --> 
+              </div>
+              <!-- END col_6 -->
+              
+              <div class="col_6">
+                <div class="soc-wrap">
+                  <ul class="blogsocico">
+                    <li class="facebook"> <a rel="nofollow" href="http://www.facebook.com/" target="_blank" title="facebook"> </a></li>
+                    <li class="googleplus"> <a rel="nofollow" href="https://plus.google.com/" target="_blank" title="googleplus"> </a></li>
+                    <li class="twitter"> <a rel="nofollow" href="http://twitter.com/" target="_blank" title="twitter"> </a></li>
+                  </ul>
+                </div>
+                <!-- soc Wrap --> 
+              </div>
+              <!-- END col_6 -->
+              <div class="clear"></div>
+              <h3 class="title-post">Fin de la Pobreza</h3>
+              <p class="textlimit">Descripcion de la Categoria Pobreza</p>
+              <div class="clear"></div>
+              <div class="fix-btn-blog"> <a href="{% url 'post:comentario' %}" class="istria-btn trigger2">Agregar Comentario</a>
+                <div class="istria-over"></div>
+                <div class="istria-line left">
+                  <div class="inner"></div>
+                </div>
+                <!-- END istria-line left -->
+                <div class="istria-line right">
+                  <div class="inner"></div>
+                </div>
+                <!-- END istria-line right --> 
+              </div>
+              <!-- END fix-btn --> 
+              
+            </div>
+            <!-- END boxwsha --> 
+          </div>
+          <!-- END col_4 -->
+      
+</body>
+</html>
