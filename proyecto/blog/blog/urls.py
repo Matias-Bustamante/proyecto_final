@@ -15,16 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include,re_path
+from .views import sesion
+from django.conf.urls.static import static
 from django.conf import settings 
 from django.views.static import serve 
-from .views import index 
+from .views import index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
-    path('blog/',include('apps.post.urls','blog')),
+    path('sesion/',sesion,name="sesion"),
+    path('blog/',include('apps.post.urls','blog')), 
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('account/', include(('apps.usuario.urls','account'))),
 
-]
+    
+]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
 if settings.DEBUG:
     urlpatterns += [ 
         re_path(r'^media/(?P<path>.*)$', serve, { 

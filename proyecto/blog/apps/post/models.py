@@ -1,4 +1,5 @@
 from django.db import models
+from apps.usuario.models import Usuario
 
 # Create your models here.
 
@@ -7,6 +8,7 @@ class Categoria(models.Model):
     nombre=models.CharField("Nombre de la Categoria" , max_length=150)
     descripcion=models.CharField('Descripción de la Categoria' ,max_length=150)
     estado=models.BooleanField('Activado/Desactivado', default=True)
+    
     
 
 
@@ -30,11 +32,12 @@ class Post(models.Model):
     imagen=models.ImageField('Imagenes', blank=False,null=False, upload_to='post')
     contenido=models.TextField()
     fecha_creacion=models.DateField('Fecha de Creación', auto_now=False, auto_now_add=True)
+    user=models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
 
     class Meta(): 
         verbose_name="Post", 
-        verbose_name_plural="Posts"
+        verbose_name_plural="Posts",
     
     def __str__(self): 
         return self.titulo
@@ -42,13 +45,15 @@ class Post(models.Model):
 
 class Comentario(models.Model): 
     id=models.AutoField(primary_key=True); 
-    descripcion=models.TextField(); 
+    mensaje=models.TextField()
+    asunto=models.CharField(max_length=100,blank=False,null=False)
     fecha_alta=models.DateField(auto_now_add=True, auto_now=False); 
-
+    user=models.ForeignKey(Usuario, on_delete=models.CASCADE)
+   
     class Meta(): 
         verbose_name="Comentario", 
         verbose_name_plural="Comentarios"
 
     def __str__(self): 
-        return self.descripcion 
+        return self.mensaje
 

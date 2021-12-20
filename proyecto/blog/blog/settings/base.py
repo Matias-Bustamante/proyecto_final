@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 ##BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,11 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-%(j5!vwx8m=u##(_3fy$@u416e5i2kzcw_73iy3n2gw3rg3lyl'
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True
 
 ALLOWED_HOSTS = []
+
+LOGIN_REDIRECT_URL='blog:categoria'
 
 
 # Application definition
@@ -43,9 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.post',
+    'apps.usuario', 
+    'crispy_forms',
     
 ]
-
+CRISPY_TEMPLATE_PACK='bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -112,11 +116,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
 STATICFIlES_DIRS=(os.path.join(os.path.dirname(BASE_DIR),'static'),)
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 

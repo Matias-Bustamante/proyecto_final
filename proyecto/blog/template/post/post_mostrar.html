@@ -107,13 +107,60 @@
       </div>
      </div>
     </br>
-      {% endfor %} 
+    {% endfor %} 
+    <h1 class="text-primary text-center">Todos los Comentarios</h1><br>
+   {% for coment in comentario %} 
+
+   <div class="grid flex16 ">
+    <div class="row">
+      <div class="col_4 beta">
+        <div class="horBar2Bxx wow fadeInLeftBig" data-wow-duration="3s" style="visibility: visible; animation-duration: 3s; animation-name: fadeInLeftBig;"></div>
+        <div class="boxwsha column3" style="height: 585px;">
+          <div class="zoomimg" id="gallery-1">
+            </a> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvuBO-U0lAuOVWgBkxT4fehkYcYWMxN29TBA&usqp=CAU" alt="Fin Pobreza" class="full-width"> <span class="fadef"></span>
+            
+            <!-- END data-responsive --> 
+           
+          </div>
+          <!-- END .zoomimg #lightgallery  -->
+          <div class="clear"></div>
+          <div class="col_6">
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic"></span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">{{coment.fecha_alta}} by ONU</a> </div>
+            <!-- END date --> 
+          </div>
+          <!-- END col_6 -->
+          
+         
+          <!-- END col_6 -->
+          <div class="clear"></div>
+          <h3 class="title-post">{{ coment.asunto }}</h3>
+          <p class="textlimit"></p>
+          <div class="clear"></div>
+         
+          <!-- END fix-btn --> 
+          
+        </div>
+        <!-- END boxwsha --> 
+      </div>
+      <!-- END col_4 -->
+
+      
+  <div class="col_4 beta">
+    <h1>{{coment.mensaje }}</h1>
+   
+  </div>
+
+  
+  </div>
+ </div>
+    
+    {% endfor %}
     {% else %} 
         <h1>Resultados No Encontrado</h1> 
         <nav class="mt-2">
           <div class="container-fluid">
             <form class="d-flex" >
-              <a href="{%url 'post:post' %}"><button class="btn btn-outline-success" type="button">Volver</button></a>
+              <a href="{%url 'post:categoria' %}"><button class="btn btn-outline-success" type="button">Volver</button></a>
             </form>
           </div>
         </nav>

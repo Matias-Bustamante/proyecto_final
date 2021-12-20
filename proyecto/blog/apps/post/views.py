@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from .models import Post,Categoria
+from django.shortcuts import render,redirect
+from .models import Post,Categoria,Comentario
+from apps.usuario.models import Usuario
 from django.core import exceptions
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 
@@ -13,19 +15,25 @@ def categoria(request):
 def post(request): 
     print(request.GET.get('buscar_post'))
     querysets=request.GET.get('buscar_post')
+    coments=Comentario.objects.all()
     post=Post.objects.all()
     if (querysets): 
         categoria=Categoria.objects.filter(nombre__icontains=querysets)
-        if (not categoria): 
-            post='' 
+        if (not categoria):  
+            coments=Comentario.objects.filter(asunto=querysets)
+            if (not coments): 
+                 post=''
+
         else: 
-            post=Post.objects.filter(categoria=Categoria.objects.get(nombre__icontains=querysets))           
+            post=Post.objects.filter(categoria=Categoria.objects.get(nombre__icontains=querysets))  
+
+        
+            
         
        
-
-
     contexto={ 
-        'posts':post
+        'posts':post, 
+       'comentario':coments,
     }
     return render(request,'post/post.html', contexto)
 
@@ -46,5 +54,32 @@ def filtrarFecha(request):
     return render(request,"buscarFecha.html", contexto)
 
 
-def Comentario(request): 
+def comments(request): 
+    
+    if (request.method=="GET"): 
+        nombre=request.GET.get('nombre')
+        apellido=request.GET.get('apellido')
+        mensaje=request.GET.get('mensaje')
+        asunto=request.GET.get('asunto')
+
+        if (nombre and apellido and mensaje and asunto): 
+            usuario_nombre=Usuario.objects.filter(nombre=nombre)
+            usuario_apellido=Usuario.objects.filter(apellido=apellido)
+            if (usuario_nombre and usuario_apellido): 
+                pk=usuario_nombre[0] 
+                comentario=Comentario(mensaje=mensaje,asunto=asunto, user=pk)
+                comentario.save()
+            else: 
+                print("incorrecto")
+
+            
+               
+
     return render(request,"comentario/comentario.html")
+
+def sesion(request): 
+    print(request.GET.get('sesion'))
+    return redirect('example.html')
+
+
+
