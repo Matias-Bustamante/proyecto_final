@@ -13,7 +13,6 @@ def categoria(request):
     return render(request,"categorias.html")
 
 def post(request): 
-    print(request.GET.get('buscar_post'))
     querysets=request.GET.get('buscar_post')
     coments=Comentario.objects.all()
     post=Post.objects.all()
@@ -23,17 +22,18 @@ def post(request):
             coments=Comentario.objects.filter(asunto=querysets)
             if (not coments): 
                  post=''
+            else: 
+                coments.order_by('-fecha_alta')[0:9]
+                
 
         else: 
             post=Post.objects.filter(categoria=Categoria.objects.get(nombre__icontains=querysets))  
+    
 
-        
-            
-        
        
     contexto={ 
         'posts':post, 
-       'comentario':coments,
+       'comentario':coments
     }
     return render(request,'post/post.html', contexto)
 
@@ -42,14 +42,16 @@ def filtrarFecha(request):
     
     querysets=request.GET.get('buscar_fecha'); 
     post_fecha=Post.objects.all()
+    comentario=Comentario.objects.all()
    
     if (not querysets): 
         print("la fecha esta vacia")
     else: 
         post_fecha=Post.objects.filter(fecha_creacion=querysets)
-    
+        comentario=Comentario.objects.filter(fecha_alta=querysets)
     contexto={ 
-        'post': post_fecha
+        'post': post_fecha,
+        'fecha':comentario
     }
     return render(request,"buscarFecha.html", contexto)
 
@@ -77,9 +79,7 @@ def comments(request):
 
     return render(request,"comentario/comentario.html")
 
-def sesion(request): 
-    print(request.GET.get('sesion'))
-    return redirect('example.html')
+
 
 
 

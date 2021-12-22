@@ -55,5 +55,5 @@ class Comentario(models.Model):
         verbose_name_plural="Comentarios"
 
     def __str__(self): 
-        return self.mensaje
+        return str(self.user)
 

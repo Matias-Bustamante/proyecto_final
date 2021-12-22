@@ -3,6 +3,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <body>
  
@@ -76,10 +77,11 @@
               </div>
               <!-- END col_6 -->
               <div class="clear"></div>
+              <a href="#"><h6 class="text-primary">{{pos.categoria}}</h6></a>
               <h3 class="title-post">{{ pos.titulo }}</h3>
               <p class="textlimit">{{ pos.descripcion }}</p>
               <div class="clear"></div>
-              <div class="fix-btn-blog"> <a href="{% url 'post:comentario' %}" class="istria-btn trigger2">Agregar Comentario</a>
+              <div class="fix-btn-blog"> <a href="{% url 'account:sesion' %}" class="istria-btn trigger2">Agregar Comentario</a>
                 <div class="istria-over"></div>
                 <div class="istria-line left">
                   <div class="inner"></div>
@@ -125,7 +127,7 @@
           <!-- END .zoomimg #lightgallery  -->
           <div class="clear"></div>
           <div class="col_6">
-            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic"></span> <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" class="linkline">{{coment.fecha_alta}} by ONU</a> </div>
+            <div class="date"> <i class="fa fa-calendar"></i> <span class="italic"></span> <a href="https://github.com/Matias-Bustamante/proyecto_final.git" class="linkline">{{coment.fecha_alta}} by {{coment.user}}</a> </div>
             <!-- END date --> 
           </div>
           <!-- END col_6 -->
@@ -133,8 +135,8 @@
          
           <!-- END col_6 -->
           <div class="clear"></div>
-          <h3 class="title-post">{{ coment.asunto }}</h3>
-          <p class="textlimit"></p>
+          <h3 class="title-post">Titulo:{{ coment.asunto }}</h3>
+          
           <div class="clear"></div>
          
           <!-- END fix-btn --> 

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index,categoria, post, filtrarFecha,comments,sesion
+from .views import index,categoria, post, filtrarFecha,comments
 
 app_name='post'
 urlpatterns = [
@@ -9,8 +9,7 @@ urlpatterns = [
     path('post/', post, name="post"),
     path("filtrarFecha/", filtrarFecha, name="filtrarFecha"), 
     path('comentario/', comments, name="comentario"), 
-    path('sesion/', sesion,name="sesion"),
-    
+   
    
    
 ]
