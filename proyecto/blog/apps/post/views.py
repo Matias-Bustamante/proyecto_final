@@ -19,11 +19,12 @@ def post(request):
     if (querysets): 
         categoria=Categoria.objects.filter(nombre__icontains=querysets)
         if (not categoria):  
-            coments=Comentario.objects.filter(asunto=querysets)
+            coments=Comentario.objects.filter(asunto=querysets).distinct('asunto')
             if (not coments): 
                  post=''
             else: 
                 coments.order_by('-fecha_alta')[0:9]
+                print(coments)
                 
 
         else: 
